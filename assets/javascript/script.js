@@ -1,4 +1,4 @@
-var topic = ["Chelsea", "Liverpool", "FC Barcelona", "Manchester City", "Bayern Munich"];
+var topic = ["Chelsea FC", "Liverpool", "FC Barcelona", "Manchester City", "Bayern Munich"];
 
 function displayGifs (){
     var teamName = $(this).attr("data-name");
@@ -13,10 +13,11 @@ function displayGifs (){
         var results = response.data;
         for (var j = 0; j < results.length; j++) {
                 var teamDiv = $("<div>");
+                teamDiv.addClass("float-left m-1");
                 var p = $("<p>");
                 p.text(results[j].rating);
                 var teamImage = $("<img>");
-                teamImage.addClass("teamName")
+                teamImage.addClass("teamName");
                 teamImage.attr("src", results[j].images.fixed_height_still.url);
                 teamImage.attr("data-state", "still");
                 teamImage.attr("data-animate", results[j].images.fixed_height.url);
@@ -44,6 +45,8 @@ function renderButtons() {
       for (var i = 0; i < topic.length; i++) {
       var a = $("<button>");
         a.addClass("team");
+        a.addClass("m-1");
+        a.addClass("btn btn-secondary");
         a.attr("data-name", topic[i]);
         a.text(topic[i]);
         $("#buttons-view").append(a);
