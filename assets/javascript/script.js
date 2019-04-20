@@ -16,11 +16,26 @@ function displayGifs (){
                 var p = $("<p>");
                 p.text(results[j].rating);
                 var teamImage = $("<img>");
-                teamImage.attr("src", results[j].images.fixed_height.url);
+                teamImage.addClass("teamName")
+                teamImage.attr("src", results[j].images.fixed_height_still.url);
+                teamImage.attr("data-state", "still");
+                teamImage.attr("data-animate", results[j].images.fixed_height.url);
+                teamImage.attr("data-still", results[j].images.fixed_height_still.url);
                 teamDiv.append(p);
                 teamDiv.append(teamImage);
                 $("#gifs-view").prepend(teamDiv);
             }
+        $(".teamName").on("click", function() {
+            var state = $(this).attr("data-state");
+            console.log(state);
+                if (state == "still"){
+                    $(this).attr("src", $(this).attr("data-animate"));
+                    $(this).attr("data-state", "animate");
+            }else if(state == "animate") {
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("data-state", "still");
+            }
+        });
       });
 }
 
@@ -33,7 +48,8 @@ function renderButtons() {
         a.text(topic[i]);
         $("#buttons-view").append(a);
     }
-  }
+  };
+
 $("#add-button").on("click", function(event) {
     event.preventDefault();
     var soccerTeam = $("#button-input").val().trim();
@@ -41,6 +57,6 @@ $("#add-button").on("click", function(event) {
     renderButtons();
   });
 
-  $(document).on("click", ".team", displayGifs);
+$(document).on("click", ".team", displayGifs);
 
 renderButtons();
