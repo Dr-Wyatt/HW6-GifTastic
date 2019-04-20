@@ -1,3 +1,6 @@
 html body {
     background-color: gray;
 }
+#title-bar {
+    height: 100px;
+}
