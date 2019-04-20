@@ -46,11 +46,12 @@ function renderButtons() {
       var a = $("<button>");
         a.addClass("team");
         a.addClass("m-1");
-        a.addClass("btn btn-secondary");
+        a.addClass("btn btn-light");
         a.attr("data-name", topic[i]);
         a.text(topic[i]);
         $("#buttons-view").append(a);
     }
+    $("#buttons-form")[0].reset();
   };
 
 $("#add-button").on("click", function(event) {
