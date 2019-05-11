@@ -4,7 +4,7 @@
 This fun app was made as the sixth homework for NU bootcamp. The assignment was to develop an app that would display Gifs based on button press.
 
 ## Problems
-A problem that was encountered was:
+A few problems that were encountered:
 * How to capture the form input to apply to the button
     * An ID was applied to each button utilizing the .val() function from the form input.
 * How to create the Giphy Ajax request URL using the button name
