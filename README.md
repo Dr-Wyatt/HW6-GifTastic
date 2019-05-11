@@ -1,7 +1,7 @@
 # HW6-GifTastic
 
 ## Introduction
-This fun app was made as the sixth homework for NU bootcamp
+This fun app was made as the sixth homework for NU bootcamp. The assignment was to develop an app that would display Gifs based on button press.
 
 ## Problems
 A problem that was encountered was:
